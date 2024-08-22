@@ -28,9 +28,14 @@ main{
 
 .queenCard{
     border: 1px solid black;
-    width: 20%;
-    min-width: 10%;
+    min-width: 4rem;
+    margin: .5rem;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    color: pink;
 }
+
 
 #teamSection{
     grid-column: 2 / 3;

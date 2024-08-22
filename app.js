@@ -1,20 +1,20 @@
 
 // current db, oof size small
 const Queen_list = [
-    {name: 'Nymphia Wind', img:'./assets/images/Nymphia_Wind.png', wins: 4},
-    {name: 'Sapphira Cristál', img:'./assets/images/Sapphira_Cristal.png', wins: 4},
-    {name: 'Plane Jane', img:'./assets/images/Plane_Jane.png', wins: 4},
-    {name: 'Q', img:'Q.png', wins: 2},
-    {name: 'Morphine Love Dion', img:'./assets/images/Morphine_Love_Dion.png', wins: 1},
-    {name: 'Dawn', img:'./assets/images/Dawn.png', wins: 0},
-    {name: 'Mhiya Iman LePaige', img:'./assets/images/Mhiya_Iman_LePaige.png', wins: 1},
-    {name: 'Plasma', img:'./assets/images/Plasma.png', wins: 2},
-    {name: 'Xunami Muse', img:'./assets/images/Xunami_Muse.png', wins: 0},
-    {name: 'Megami', img:'./assets/images/Megami.png', wins: 1},
-    {name: 'Geneva Karr', img:'./assets/images/Geneva_Karr.png', wins: 1},
-    {name: 'Amanda Tori Meating', img:'./assets/images/Amanda_Tori_Meating.png', wins: 0},
-    {name: 'Mirage', img:'./assets/images/Mirage.png', wins: 0},
-    {name: 'Hershii LiqCour-Jeté', img:'./assets/images/Hershii_LiqCour_Jete.png', wins: 0}
+    {name: 'Nymphia Wind', img:'./assets/Nymphia_Wind.png', wins: 4},
+    {name: 'Sapphira Cristál', img:'./assets/Sapphira_Cristal.png', wins: 4},
+    {name: 'Plane Jane', img:'./assets/Plane_Jane.png', wins: 4},
+    {name: 'Q', img:'./assets/Q.png', wins: 2},
+    {name: 'Morphine Love Dion', img:'./assets/Morphine_Love_Dion.png', wins: 1},
+    {name: 'Dawn', img:'./assets/Dawn.png', wins: 0},
+    {name: 'Mhiya Iman LePaige', img:'./assets/Mhiya_Iman_LePaige.png', wins: 1},
+    {name: 'Plasma', img:'./assets/Plasma.png', wins: 2},
+    {name: 'Xunami Muse', img:'./assets/Xunami_Muse.png', wins: 0},
+    {name: 'Megami', img:'./assets/Megami.png', wins: 1},
+    {name: 'Geneva Karr', img:'./assets/Geneva_Karr.png', wins: 1},
+    {name: 'Amanda Tori Meating', img:'./assets/Amanda_Tori_Meating.png', wins: 0},
+    {name: 'Mirage', img:'./assets/Mirage.png', wins: 0},
+    {name: 'Hershii LiqCour-Jeté', img:'./assets/Hershii_LiqCour_Jete.png', wins: 0}
 ];
 
 
@@ -31,6 +31,9 @@ Queen_list.forEach((queen)=>{
     let card = document.createElement('div');
     card.setAttribute('class', 'queenCard');
     card.setAttribute('id', queen.name);
+    card.style.backgroundImage = `url(${queen.img})`;
+    // card.style.backgroundSize = 'cover';
+    // card.style.backgroundPosition = 'center';
     card.innerHTML = `<h4>${queen.name}</h4>` //add images next
     queenGallary.prepend(card)
 })
