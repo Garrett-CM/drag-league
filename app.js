@@ -60,7 +60,20 @@ teams.forEach((team)=>{
     } )
 })
 
+// create teams
+const addBtn = document.getElementById('add');
 
+addBtn.addEventListener('click', createTeam);
+let teamList = document.getElementById("teamList");
+
+function createTeam(){
+    let teamName = document.getElementById("teamNameInput").value;
+    console.log(teamName);
+    let teamCard = document.createElement('div');
+    teamCard.setAttribute('class', 'team');
+    teamList.appendChild(teamCard);
+}
+// bug: cant add cards to created teams, probs bc they need the setAttributes
 
 
 
