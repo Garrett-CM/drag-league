@@ -27,11 +27,11 @@ let teams = Array.from(document.getElementsByClassName("team"));
 
 // turn queens into cards and attach to gallary
 Queen_list.forEach((queen)=>{
-    console.log(queen.name)
+    // console.log(queen.name)
     let card = document.createElement('div');
     card.setAttribute('class', 'queenCard');
     card.setAttribute('id', queen.name);
-    card.innerHTML = `<h4>${queen.name}</h4>`
+    card.innerHTML = `<h4>${queen.name}</h4>` //add images next
     queenGallary.prepend(card)
 })
 
@@ -41,7 +41,6 @@ queenCards.forEach(queen => {
     queen.setAttribute('draggable','true');
     queen.addEventListener('dragstart', (e)=>{
         e.dataTransfer.setData('text/plain', e.target.id);
-        // console.log(e.target.id)
     })
 });
 
@@ -55,8 +54,6 @@ teams.forEach((team)=>{
         let draggedElement = document.getElementById(draggedElementId);
 
         team.appendChild(draggedElement);
-        console.log(draggedElementId);
-        console.log(draggedElement);
     } )
 })
 
