@@ -47,30 +47,38 @@ queenCards.forEach(queen => {
     })
 });
 
-teams.forEach((team)=>{
-    team.addEventListener('dragover', (e)=> e.preventDefault());
-    team.addEventListener('drop', (e)=>{
-        e.preventDefault();
-        let draggedElementId = e.dataTransfer.getData('text/plain');
+// might remove createTeam solves this
+// teams.forEach((team)=>{
+//     team.addEventListener('dragover', (e)=> e.preventDefault());
+//     team.addEventListener('drop', (e)=>{
+//         e.preventDefault();
+//         let draggedElementId = e.dataTransfer.getData('text/plain');
 
-        // this is the issue, it
-        let draggedElement = document.getElementById(draggedElementId);
+//         // this is the issue, it
+//         let draggedElement = document.getElementById(draggedElementId);
 
-        team.appendChild(draggedElement);
-    } )
-})
+//         team.appendChild(draggedElement);
+//     } )
+// })
 
 // create teams
 const addBtn = document.getElementById('add');
 
 addBtn.addEventListener('click', createTeam);
 let teamList = document.getElementById("teamList");
+let teamNameInput = document.getElementById("teamNameInput");
 
 function createTeam(){
-    let teamName = document.getElementById("teamNameInput").value;
-    console.log(teamName);
     let teamCard = document.createElement('div');
     teamCard.setAttribute('class', 'team');
+    teamCard.addEventListener('dragover', (e)=> e.preventDefault())
+    teamCard.addEventListener('drop', (e)=>{
+        e.preventDefault();
+        let draggedElementId = e.dataTransfer.getData('text/plain');
+        let draggedElement = document.getElementById(draggedElementId);
+        console.log(draggedElementId);
+        teamCard.prepend(draggedElement);
+    })
     teamList.appendChild(teamCard);
 }
 // bug: cant add cards to created teams, probs bc they need the setAttributes
